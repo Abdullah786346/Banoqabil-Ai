@@ -18,7 +18,7 @@ interface HeaderProps {
   onOpenPresets: () => void;
   onToggleSandbox: () => void;
   isSandboxOpen: boolean;
-  hasGeminiKey: boolean;
+  hasApiKey: boolean;
 }
 
 const STACKS: StackType[] = [
@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenPresets,
   onToggleSandbox,
   isSandboxOpen,
-  hasGeminiKey
+  hasApiKey
 }) => {
   return (
     <header className="border-b border-slate-800 bg-[#0F172A] sticky top-0 z-40 px-4 lg:px-6 py-3.5">

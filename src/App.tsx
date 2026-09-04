@@ -51,7 +51,7 @@ export default function App() {
   // Modals & Panels
   const [isSandboxOpen, setIsSandboxOpen] = useState<boolean>(false);
   const [isPresetModalOpen, setIsPresetModalOpen] = useState<boolean>(false);
-  const [hasGeminiKey, setHasGeminiKey] = useState<boolean>(true);
+  const [hasApiKey, setHasApiKey] = useState<boolean>(true);
 
   // Show temporary toast notification
   const showToast = (msg: string) => {
@@ -64,7 +64,7 @@ export default function App() {
     fetch('/api/health')
       .then(res => res.json())
       .then(data => {
-        setHasGeminiKey(Boolean(data.hasApiKey));
+        setHasApiKey(Boolean(data.hasApiKey));
       })
       .catch(() => {
         // Silently catch in dev
@@ -240,7 +240,7 @@ export default function App() {
         onOpenPresets={() => setIsPresetModalOpen(true)}
         onToggleSandbox={() => setIsSandboxOpen(!isSandboxOpen)}
         isSandboxOpen={isSandboxOpen}
-        hasGeminiKey={hasGeminiKey}
+        hasApiKey={hasApiKey}
       />
 
       {/* Sub-Header / Student Mentor Welcome Banner */}
